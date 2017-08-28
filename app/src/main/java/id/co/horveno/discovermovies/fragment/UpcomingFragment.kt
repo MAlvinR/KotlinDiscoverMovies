@@ -21,6 +21,7 @@ import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.Upcoming
 import kotlinx.android.synthetic.main.upcoming_fragment.*
 import id.co.horveno.discovermovies.util.EndPoint
+import id.co.horveno.discovermovies.adapter.UpcomingAdapter
 
 class UpcomingFragment : Fragment() {
 
@@ -44,6 +45,8 @@ class UpcomingFragment : Fragment() {
                 val gson:Gson = gsonBuilder.create()
 
                 upcomingGson = gson.fromJson(response, Upcoming::class.java)
+                val adapter = UpcomingAdapter(activity, upcomingGson!!.data)
+                recyclerUpcoming.adapter = adapter
             }
 
 

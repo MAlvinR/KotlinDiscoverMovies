@@ -21,6 +21,7 @@ import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
 import kotlinx.android.synthetic.main.now_playing_fragment.*
 import id.co.horveno.discovermovies.util.EndPoint
+import id.co.horveno.discovermovies.adapter.NowPlayingAdapter
 
 class NowPlayingFragment : Fragment() {
 
@@ -46,6 +47,9 @@ class NowPlayingFragment : Fragment() {
                 var gson:Gson = gsonBuilder.create()
 
                 nowPlayingGson = gson.fromJson(response, NowPlaying::class.java)
+
+                val adapter = NowPlayingAdapter(activity, nowPlayingGson!!.data)
+                recyclerNowPlaying.adapter = adapter
 
 
             }
