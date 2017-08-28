@@ -2,6 +2,7 @@ package id.co.horveno.discovermovies.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +20,7 @@ import com.google.gson.GsonBuilder
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
 import kotlinx.android.synthetic.main.now_playing_fragment.*
+import id.co.horveno.discovermovies.util.EndPoint
 
 class NowPlayingFragment : Fragment() {
 
@@ -27,16 +29,16 @@ class NowPlayingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =  inflater!!.inflate(R.layout.now_playing_fragment, container, false)
 
-        var linearLayoutManager = LinearLayoutManager(activity)
+        var gridLayoutManager = GridLayoutManager(activity, 2)
 
-        recyclerNowPlaying.layoutManager = linearLayoutManager
+        recyclerNowPlaying.layoutManager = gridLayoutManager
         getNowPlayingData()
         return view
     }
 
     private fun getNowPlayingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
-        val stringRequest: StringRequest = StringRequest(Request.Method.GET, id.co.horveno.discovermovies.util.EndPoint.URL_UPCOMING, object:Response.Listener<String> {
+        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_UPCOMING, object:Response.Listener<String> {
 
             override fun onResponse(response: String?) {
 
