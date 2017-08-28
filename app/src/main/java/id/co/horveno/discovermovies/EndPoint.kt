@@ -4,7 +4,7 @@ package id.co.horveno.discovermovies
  * Created by ASUS on 28/08/2017.
  */
 
-class EndPoint {
+object EndPoint {
     private val BASE_URL = "http://api.themoviedb.org/3/movie/"
 
     private val API_KEY = "?api_key=5bcd103535c907563275e5c79a7abd77"
