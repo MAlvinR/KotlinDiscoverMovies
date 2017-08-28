@@ -33,7 +33,7 @@ class UpcomingFragment : Fragment() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
         val stringRequest: StringRequest = StringRequest(Request.Method.GET,EndPoint.URL_NOWPLAYING, Response.Listener { s ->
 
-            
+
 
         }, Response.ErrorListener { error: VolleyError? ->
 
