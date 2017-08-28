@@ -2,6 +2,7 @@ package id.co.horveno.discovermovies.fragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,18 +15,25 @@ import com.android.volley.toolbox.Volley
 
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.EndPoint
+import kotlinx.android.synthetic.main.upcoming_fragment.*
 
 class UpcomingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val upcomingView = inflater!!.inflate(R.layout.upcoming_fragment, container, false)
 
+        var linearLayoutManager = LinearLayoutManager(activity)
+
+        recyclerUpcoming.layoutManager = linearLayoutManager
+        getUpcomingData()
         return upcomingView
     }
 
     private fun getUpcomingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
         val stringRequest: StringRequest = StringRequest(Request.Method.GET,EndPoint.URL_NOWPLAYING, Response.Listener { s ->
+
+            
 
         }, Response.ErrorListener { error: VolleyError? ->
 
