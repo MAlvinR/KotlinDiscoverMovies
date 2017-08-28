@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -32,7 +33,7 @@ class UpcomingFragment : Fragment() {
 
         val gridLayoutManager = GridLayoutManager(activity, 2)
 
-        recyclerUpcoming.layoutManager = gridLayoutManager
+        /*recyclerUpcoming.layoutManager = gridLayoutManager*/
         getUpcomingData()
         return upcomingView
     }
@@ -41,12 +42,14 @@ class UpcomingFragment : Fragment() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
         val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
             override fun onResponse(response: String?) {
-                val gsonBuilder:GsonBuilder = GsonBuilder()
+                /*val gsonBuilder:GsonBuilder = GsonBuilder()
                 val gson:Gson = gsonBuilder.create()
 
                 upcomingGson = gson.fromJson(response, Upcoming::class.java)
                 val adapter = UpcomingAdapter(activity, upcomingGson!!.data)
-                recyclerUpcoming.adapter = adapter
+                recyclerUpcoming.adapter = adapter*/
+
+                Toast.makeText(activity, response, Toast.LENGTH_LONG).show()
             }
 
 

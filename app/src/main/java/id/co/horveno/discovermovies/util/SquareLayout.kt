@@ -20,7 +20,7 @@ class SquareLayout : RelativeLayout {
     constructor(context: Context,attr:AttributeSet,defStyleAttr:Int,defStyleRes:Int) : super(context, attr, defStyleAttr, defStyleRes)
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        super.onMeasure(widthMeasureSpec, widthMeasureSpec)
     }
 
 }

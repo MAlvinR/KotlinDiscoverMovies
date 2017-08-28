@@ -28,12 +28,15 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
     override fun onBindViewHolder(holder: NowPlayingItemHolder?, position: Int) {
         val IMAGE_URL:String = "http://image.tmdb.org/t/p/w185"
 
+        val nowPlayingData:NowPlaying.NowPlayingData = mMovieData!!.get(position)
+
         Picasso.with(mContext)
-                .load(IMAGE_URL + mMovieData.poster)
+                .load(IMAGE_URL + nowPlayingData.poster_path)
+                .into(holder!!.movieThumb)
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return mMovieData!!.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): NowPlayingItemHolder {

@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -30,9 +31,7 @@ class NowPlayingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =  inflater!!.inflate(R.layout.now_playing_fragment, container, false)
 
-        var gridLayoutManager = GridLayoutManager(activity, 2)
 
-        recyclerNowPlaying.layoutManager = gridLayoutManager
         getNowPlayingData()
         return view
     }
@@ -50,6 +49,10 @@ class NowPlayingFragment : Fragment() {
 
                 val adapter = NowPlayingAdapter(activity, nowPlayingGson!!.data)
                 recyclerNowPlaying.adapter = adapter
+                var gridLayoutManager = GridLayoutManager(activity, 2)
+
+                recyclerNowPlaying.layoutManager = gridLayoutManager
+                /*Toast.makeText(activity, response, Toast.LENGTH_LONG).show()*/
 
 
             }
