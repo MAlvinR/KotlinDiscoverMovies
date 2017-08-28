@@ -15,7 +15,6 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import id.co.horveno.discovermovies.EndPoint
 
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
@@ -37,7 +36,7 @@ class NowPlayingFragment : Fragment() {
 
     private fun getNowPlayingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
-        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_UPCOMING, object:Response.Listener<String> {
+        val stringRequest: StringRequest = StringRequest(Request.Method.GET, id.co.horveno.discovermovies.util.EndPoint.URL_UPCOMING, object:Response.Listener<String> {
 
             override fun onResponse(response: String?) {
 

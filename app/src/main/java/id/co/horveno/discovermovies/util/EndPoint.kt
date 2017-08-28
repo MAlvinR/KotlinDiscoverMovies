@@ -1,4 +1,4 @@
-package id.co.horveno.discovermovies
+package id.co.horveno.discovermovies.util
 
 /**
  * Created by ASUS on 28/08/2017.

@@ -17,7 +17,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 
 import id.co.horveno.discovermovies.R
-import id.co.horveno.discovermovies.EndPoint
 import id.co.horveno.discovermovies.gson.Upcoming
 import kotlinx.android.synthetic.main.upcoming_fragment.*
 
@@ -37,7 +36,7 @@ class UpcomingFragment : Fragment() {
 
     private fun getUpcomingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
-        val stringRequest: StringRequest = StringRequest(Request.Method.GET,EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
+        val stringRequest: StringRequest = StringRequest(Request.Method.GET, id.co.horveno.discovermovies.util.EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
             override fun onResponse(response: String?) {
                 val gsonBuilder:GsonBuilder = GsonBuilder()
                 val gson:Gson = gsonBuilder.create()
