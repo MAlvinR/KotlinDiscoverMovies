@@ -47,7 +47,7 @@ class UpcomingAdapter: RecyclerView.Adapter<UpcomingAdapter.UpcomingItemHolder> 
     }
 
     class UpcomingItemHolder(itemView:View?) : RecyclerView.ViewHolder(itemView) {
-        var movieThumb = itemView?.findViewById(R.id.nowPlayingThumbnail) as ImageView
+        var movieThumb = itemView?.findViewById(R.id.upcomingThumbnail) as ImageView
     }
 
 }

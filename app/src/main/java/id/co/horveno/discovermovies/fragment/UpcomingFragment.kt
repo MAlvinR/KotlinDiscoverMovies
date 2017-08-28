@@ -37,7 +37,7 @@ class UpcomingFragment : Fragment() {
 
     private fun getUpcomingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
-        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
+        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_UPCOMING, object:Response.Listener<String> {
             override fun onResponse(response: String?) {
                 val gsonBuilder:GsonBuilder = GsonBuilder()
                 val gson:Gson = gsonBuilder.create()

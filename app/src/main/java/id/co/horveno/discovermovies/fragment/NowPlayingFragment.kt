@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -38,7 +39,7 @@ class NowPlayingFragment : Fragment() {
 
     private fun getNowPlayingData() {
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
-        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_UPCOMING, object:Response.Listener<String> {
+        val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
 
             override fun onResponse(response: String?) {
 
@@ -51,7 +52,7 @@ class NowPlayingFragment : Fragment() {
                 recyclerNowPlaying.adapter = adapter
                 var gridLayoutManager = GridLayoutManager(activity, 2)
 
-                recyclerNowPlaying.layoutManager = gridLayoutManager
+                recyclerNowPlaying.layoutManager = gridLayoutManager as RecyclerView.LayoutManager?
                 /*Toast.makeText(activity, response, Toast.LENGTH_LONG).show()*/
 
 
