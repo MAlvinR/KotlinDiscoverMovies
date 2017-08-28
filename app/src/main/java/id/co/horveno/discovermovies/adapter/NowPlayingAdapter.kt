@@ -10,6 +10,7 @@ import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
+import id.co.horveno.discovermovies.util.EndPoint
 
 /**
  * Created by ASUS on 28/08/2017.
@@ -26,12 +27,11 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
     }
 
     override fun onBindViewHolder(holder: NowPlayingItemHolder?, position: Int) {
-        val IMAGE_URL:String = "http://image.tmdb.org/t/p/w185"
 
         val nowPlayingData:NowPlaying.NowPlayingData = mMovieData!!.get(position)
 
         Picasso.with(mContext)
-                .load(IMAGE_URL + nowPlayingData.poster_path)
+                .load(EndPoint.IMAGE_URL + nowPlayingData.poster_path)
                 .into(holder!!.movieThumb)
     }
 
@@ -46,7 +46,7 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
     }
 
     class NowPlayingItemHolder(itemView:View?) : RecyclerView.ViewHolder(itemView) {
-            var movieThumb = itemView?.findViewById(R.id.thumbnail) as ImageView
+            var movieThumb = itemView?.findViewById(R.id.nowPlayingThumbnail) as ImageView
     }
 
 }

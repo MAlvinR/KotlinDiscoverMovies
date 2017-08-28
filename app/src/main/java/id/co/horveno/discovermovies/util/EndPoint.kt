@@ -11,6 +11,8 @@ object EndPoint {
     private val NOW_PLAYING = "now_playing"
     private val UPCOMING = "upcoming"
 
+    val IMAGE_URL = "http://image.tmdb.org/t/p/w185"
+
     val URL_NOWPLAYING = BASE_URL + NOW_PLAYING + API_KEY
     val URL_UPCOMING = BASE_URL + UPCOMING + API_KEY
 

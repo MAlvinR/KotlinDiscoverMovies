@@ -13,19 +13,19 @@ class Upcoming {
 
     inner class UpcomingData {
         @SerializedName("vote_count")
-        var vote_count:Int? = null
+        var vote_count:String? = null
 
         @SerializedName("id")
-        var idMovie:Int? = null
+        var idMovie:String? = null
 
         @SerializedName("vote_average")
-        var vote_average:Int? = null
+        var vote_average:String? = null
 
         @SerializedName("title")
         var movieTitle:String? = null
 
         @SerializedName("popularity")
-        var popularity:Float? = null
+        var popularity:String? = null
 
         @SerializedName("poster_path")
         var poster_path:String? = null
