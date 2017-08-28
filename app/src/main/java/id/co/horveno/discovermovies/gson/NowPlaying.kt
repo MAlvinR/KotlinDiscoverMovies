@@ -9,9 +9,9 @@ import com.google.gson.annotations.SerializedName
 class NowPlaying {
 
     @SerializedName("results")
-    var data: List<UpcomingData>? = null
+    var data: List<NowPlayingData>? = null
 
-    inner class UpcomingData {
+    inner class NowPlayingData {
         @SerializedName("vote_count")
         var vote_count:Int? = null
 
