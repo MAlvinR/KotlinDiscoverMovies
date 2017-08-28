@@ -13,22 +13,22 @@ class NowPlaying {
 
     inner class NowPlayingData {
         @SerializedName("vote_count")
-        var vote_count:Int? = null
+        val vote_count:Int? = null
 
         @SerializedName("id")
-        var idMovie:Int? = null
+        val idMovie:Int? = null
 
         @SerializedName("vote_average")
-        var vote_average:Int? = null
+        val vote_average:Int? = null
 
         @SerializedName("title")
-        var movieTitle:String? = null
+        val movieTitle:String? = null
 
         @SerializedName("popularity")
-        var popularity:Float? = null
+        val popularity:Float? = null
 
         @SerializedName("poster_path")
-        var poster_path:String? = null
+        val poster_path:String? = null
 
     }
 
