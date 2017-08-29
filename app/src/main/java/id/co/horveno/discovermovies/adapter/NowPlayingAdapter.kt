@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
 import id.co.horveno.discovermovies.util.EndPoint
+import id.co.horveno.discovermovies.util.SquareLayout
 
 /**
  * Created by ASUS on 28/08/2017.
@@ -33,6 +35,10 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
         Picasso.with(mContext)
                 .load(EndPoint.IMAGE_URL + nowPlayingData.poster_path)
                 .into(holder!!.movieThumb)
+
+        holder.squareLayout.setOnClickListener({v ->
+            Toast.makeText(mContext, "" + nowPlayingData.movieTitle, Toast.LENGTH_LONG).show()
+        })
     }
 
     override fun getItemCount(): Int {
@@ -47,6 +53,7 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
 
     class NowPlayingItemHolder(itemView:View?) : RecyclerView.ViewHolder(itemView) {
             var movieThumb = itemView?.findViewById(R.id.nowPlayingThumbnail) as ImageView
+            var squareLayout = itemView?.findViewById(R.id.sq_NowPlaying) as SquareLayout
     }
 
 }
