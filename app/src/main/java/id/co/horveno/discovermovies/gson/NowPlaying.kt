@@ -13,22 +13,31 @@ class NowPlaying {
 
     inner class NowPlayingData {
         @SerializedName("vote_count")
-        val vote_count:String? = null
+        val vote_count:Int? = null
 
         @SerializedName("id")
-        val idMovie:String? = null
+        val idMovie:Int? = null
 
         @SerializedName("vote_average")
-        val vote_average:String? = null
+        val vote_average:Double? = null
 
         @SerializedName("title")
         val movieTitle:String? = null
 
         @SerializedName("popularity")
-        val popularity:Float? = null
+        val popularity:Double? = null
 
         @SerializedName("poster_path")
         val poster_path:String? = null
+
+        @SerializedName("backdrop_path")
+        val backdrop_path:String? = null
+
+        @SerializedName("overview")
+        val overview:String? = null
+
+        @SerializedName("release_date")
+        val release_date:String? = null
 
     }
 

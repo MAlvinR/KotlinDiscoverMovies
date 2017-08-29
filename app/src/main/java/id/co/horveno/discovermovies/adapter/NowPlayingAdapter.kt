@@ -1,6 +1,7 @@
 package id.co.horveno.discovermovies.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.squareup.picasso.Picasso
 import id.co.horveno.discovermovies.R
+import id.co.horveno.discovermovies.activity.DetailActivity
 import id.co.horveno.discovermovies.gson.NowPlaying
 import id.co.horveno.discovermovies.util.EndPoint
 import id.co.horveno.discovermovies.util.SquareLayout
@@ -33,11 +35,18 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
         val nowPlayingData:NowPlaying.NowPlayingData = mMovieData!!.get(position)
 
         Picasso.with(mContext)
-                .load(EndPoint.IMAGE_URL + nowPlayingData.poster_path)
+                .load(EndPoint.IMAGE_URL_POSTER + nowPlayingData.poster_path)
                 .into(holder!!.movieThumb)
 
         holder.squareLayout.setOnClickListener({v ->
-            Toast.makeText(mContext, "" + nowPlayingData.movieTitle, Toast.LENGTH_LONG).show()
+            /*Toast.makeText(mContext, "" + nowPlayingData.movieTitle, Toast.LENGTH_SHORT).show()*/
+            val intent = Intent(mContext?.applicationContext, DetailActivity::class.java)
+            intent.putExtra("title_movie", nowPlayingData.movieTitle)
+            intent.putExtra("backdrop_movie", nowPlayingData.backdrop_path)
+            intent.putExtra("overview_movie", nowPlayingData.overview)
+            intent.putExtra("releasedate_movie", nowPlayingData.release_date)
+            intent.putExtra("votesaverage_movie", nowPlayingData.vote_average)
+            mContext!!.startActivity(intent)
         })
     }
 

@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.gson.NowPlaying
 import id.co.horveno.discovermovies.gson.Upcoming
 import id.co.horveno.discovermovies.util.EndPoint
+import id.co.horveno.discovermovies.util.SquareLayout
 
 /**
  * Created by ASUS on 28/08/2017.
@@ -32,8 +34,12 @@ class UpcomingAdapter: RecyclerView.Adapter<UpcomingAdapter.UpcomingItemHolder> 
         val upcomingData : Upcoming.UpcomingData = mMovieData!!.get(position)
 
         Picasso.with(mContext)
-                .load(EndPoint.IMAGE_URL + upcomingData.poster_path)
+                .load(EndPoint.IMAGE_URL_POSTER + upcomingData.poster_path)
                 .into(holder!!.movieThumb)
+
+        holder.squareLayout.setOnClickListener({v ->
+            Toast.makeText(mContext, "" + upcomingData.movieTitle, Toast.LENGTH_SHORT).show()
+        })
     }
 
     override fun getItemCount(): Int {
@@ -48,6 +54,7 @@ class UpcomingAdapter: RecyclerView.Adapter<UpcomingAdapter.UpcomingItemHolder> 
 
     class UpcomingItemHolder(itemView:View?) : RecyclerView.ViewHolder(itemView) {
         var movieThumb = itemView?.findViewById(R.id.upcomingThumbnail) as ImageView
+        var squareLayout = itemView?.findViewById(R.id.sq_Upcoming) as SquareLayout
     }
 
 }
