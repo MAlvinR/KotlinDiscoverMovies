@@ -1,10 +1,12 @@
-package id.co.horveno.discovermovies
+package id.co.horveno.discovermovies.activity
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.v7.widget.Toolbar
+import id.co.horveno.discovermovies.R
 import id.co.horveno.discovermovies.adapter.TabAdapter
 
 import kotlinx.android.synthetic.main.content_main.*
@@ -16,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+
+        val ptSans: Typeface = Typeface.createFromAsset(assets, "fonts/ptsans_regular.ttf")
+        toolbarTitle.typeface = ptSans
 
         tabHome.addTab(tabHome.newTab().setText("Now Playing"))
         tabHome.addTab(tabHome.newTab().setText("Upcoming"))

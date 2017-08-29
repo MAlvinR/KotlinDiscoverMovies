@@ -1,5 +1,6 @@
 package id.co.horveno.discovermovies.fragment
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -8,6 +9,8 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import com.android.volley.Request
@@ -38,6 +41,7 @@ class NowPlayingFragment : Fragment() {
     }
 
     private fun getNowPlayingData() {
+
         val requestQueue: RequestQueue = Volley.newRequestQueue(activity)
         val stringRequest: StringRequest = StringRequest(Request.Method.GET, EndPoint.URL_NOWPLAYING, object:Response.Listener<String> {
 
@@ -52,9 +56,7 @@ class NowPlayingFragment : Fragment() {
                 recyclerNowPlaying.adapter = adapter
                 var gridLayoutManager = GridLayoutManager(activity, 2)
 
-                recyclerNowPlaying.layoutManager = gridLayoutManager as RecyclerView.LayoutManager?
-                /*Toast.makeText(activity, response, Toast.LENGTH_LONG).show()*/
-
+                recyclerNowPlaying.layoutManager = gridLayoutManager
 
             }
 
