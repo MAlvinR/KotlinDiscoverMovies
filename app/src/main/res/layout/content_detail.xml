@@ -89,7 +89,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Storyline"
+                android:text="STORYLINE"
                 android:id="@+id/storyline_title"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="20sp"/>
@@ -99,11 +99,20 @@
                 android:id="@+id/text_overview"
                 android:layout_marginTop="10dp"
                 android:textSize="18sp"
-                android:text="@string/dummy_overview"
+                tools:text="@string/dummy_overview"
+                android:textColor="@android:color/white" />
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAY TRAILER"
+                android:padding="10dp"
                 android:textColor="@android:color/white"
-                />
+                android:background="@drawable/bubble_background_yellow"/>-->
 
         </LinearLayout>
+
+
 
 
     </LinearLayout>

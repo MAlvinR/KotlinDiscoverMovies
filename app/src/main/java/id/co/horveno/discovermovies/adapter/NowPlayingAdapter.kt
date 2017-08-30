@@ -46,6 +46,7 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
             intent.putExtra("overview_movie", nowPlayingData.overview)
             intent.putExtra("releasedate_movie", nowPlayingData.release_date)
             intent.putExtra("votesaverage_movie", nowPlayingData.vote_average)
+            intent.putExtra("votecount_movie", nowPlayingData.vote_count)
             mContext!!.startActivity(intent)
         })
     }

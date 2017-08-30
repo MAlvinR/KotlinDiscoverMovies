@@ -31,22 +31,24 @@ class DetailActivity : AppCompatActivity() {
         var overviewMovie = intent.getStringExtra("overview_movie")
         var releasedateMovie = intent.getStringExtra("releasedate_movie")
         var votesaverageMovie = intent.getDoubleExtra("votesaverage_movie", 0.00)
+        var votecountMovie = intent.getIntExtra("votecount_movie", 0)
 
         header_title.text = titleMovie
         text_overview.text = overviewMovie
         release_year.text = releasedateMovie
         votes_average.text = votesaverageMovie.toString()
 
+
         Picasso.with(applicationContext)
                 .load(EndPoint.IMAGE_URL_BACKDROP + backdropMovie)
                 .into(header_thumbnail)
 
 
-
+        votesCount(votecountMovie)
         initCollapsingToolbar(titleMovie)
         fontSetup()
 
-        rb_votes.rating = 4.5f
+        rb_votes.rating = votesaverageMovie.toFloat() / 2
     }
 
     private fun fontSetup() {
@@ -59,6 +61,14 @@ class DetailActivity : AppCompatActivity() {
         release_year.typeface = ptSansBold
         storyline_title.typeface = ptSansRegular
         text_overview.typeface = ptSansRegular
+    }
+
+    private fun votesCount(voteCount:Int) {
+        if (voteCount >= 3) {
+            votes_result.text = voteCount.toString() + getString(R.string.votes)
+        } else {
+            votes_result.text = voteCount.toString() + getString(R.string.vote)
+        }
     }
 
     private fun initCollapsingToolbar(titleMovie:String) {

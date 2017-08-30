@@ -98,7 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end|bottom"
-                            android:text="38876 VOTES"
+                            tools:text="38876 VOTES"
                             android:id="@+id/votes_result"
                             android:padding="2dp"
                             android:textAlignment="textEnd"
