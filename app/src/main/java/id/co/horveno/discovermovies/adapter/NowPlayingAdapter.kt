@@ -41,6 +41,8 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
         holder.squareLayout.setOnClickListener({v ->
             /*Toast.makeText(mContext, "" + nowPlayingData.movieTitle, Toast.LENGTH_SHORT).show()*/
             val intent = Intent(mContext?.applicationContext, DetailActivity::class.java)
+            intent.putExtra("id_movie", nowPlayingData.idMovie)
+            Toast.makeText(mContext, "ID: " + nowPlayingData.idMovie, Toast.LENGTH_SHORT).show()
             intent.putExtra("title_movie", nowPlayingData.movieTitle)
             intent.putExtra("backdrop_movie", nowPlayingData.backdrop_path)
             intent.putExtra("overview_movie", nowPlayingData.overview)

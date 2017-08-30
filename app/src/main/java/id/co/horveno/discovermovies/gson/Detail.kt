@@ -38,6 +38,6 @@ class Detail {
     val release_date:String? = null
 
     @SerializedName("runtime")
-    val runtime:String? = nullcd 
+    val runtime:String? = null
 
 }

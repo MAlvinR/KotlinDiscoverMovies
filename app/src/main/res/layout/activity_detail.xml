@@ -88,6 +88,7 @@
                             android:progressTint="@color/yellow"
                             android:isIndicator="true"
                             android:numStars="5"
+                            android:rating="5"
                             android:padding="2dp"
                             android:stepSize="0.1"
                             android:layout_above="@+id/votes_result"
