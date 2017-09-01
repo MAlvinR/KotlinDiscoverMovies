@@ -40,4 +40,6 @@ class Detail {
     @SerializedName("runtime")
     val runtime:String? = null
 
+    
+
 }

@@ -1,5 +1,8 @@
 package id.co.horveno.discovermovies.fragment
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v4.app.Fragment

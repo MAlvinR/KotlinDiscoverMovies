@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="ABOUT FILM"
+        android:id="@+id/txt_about"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Original Title:"
+            android:layout_marginRight="15dp"
+            android:id="@+id/title_original"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/content_original"
+            android:text="@string/dummy_title"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type:"
+            android:layout_marginRight="81dp"
+            android:id="@+id/title_type"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_category_types"
+            android:textSize="18sp"
+            android:id="@+id/content_type"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Production:"
+            android:layout_marginRight="33dp"
+            android:id="@+id/title_production"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_production"
+            android:id="@+id/content_production"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Premiere:"
+            android:layout_marginRight="47dp"
+            android:id="@+id/title_premiere"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_premiere"
+            android:textSize="18sp"
+            android:id="@+id/content_premiere"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:id="@+id/title_desc"
+            android:layout_marginRight="30dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_overview"
+            android:lines="5"
+            android:id="@+id/content_desc"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

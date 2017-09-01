@@ -1,5 +1,8 @@
 package id.co.horveno.discovermovies.util
 
+import android.net.Uri
+import java.net.URL
+
 /**
  * Created by ASUS on 28/08/2017.
  */

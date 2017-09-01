@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="15dp">
 
             <LinearLayout
@@ -40,7 +40,7 @@
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"/>
 
-                <TextView
+                <!--<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bubble_background_darker_blue"
@@ -50,37 +50,27 @@
                     android:text="Family"
                     android:layout_gravity="center"
                     android:textColor="@android:color/white"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bubble_background_darker_blue"
-                    android:padding="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="Fantasy"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bubble_background_darker_blue"
-                    android:padding="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="Adventure"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:textStyle="bold" />-->
 
             </LinearLayout>
 
+            <com.vpaliy.chips_lover.ChipsLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/chipsContainer"
+                app:chip_elevation="4dp"
+                app:chip_backgroundColor="@color/darker_blue"
+                app:chipTextColor="@color/white"
+                app:chipTextStyle="@style/Widget.HashTag"
+                app:chipDefaultAnimation="true"
+                app:chip_layout_horizontal_margin="8dp"
+                app:chip_layout_vertical_margin="8dp"/>
+
         </LinearLayout>
 
-
+        <!--OVERVIEW-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +83,7 @@
                 android:text="STORYLINE"
                 android:id="@+id/storyline_title"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="20sp"/>
+                android:textSize="18sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,18 +93,44 @@
                 tools:text="@string/dummy_overview"
                 android:textColor="@android:color/white" />
 
-            <!--<TextView
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:background="@color/blue"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/pg_trailers"
+                style="?android:attr/progressBarStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PLAY TRAILER"
-                android:padding="10dp"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bubble_background_yellow"/>-->
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRAILERS"
+                android:id="@+id/trailers_title"
+                android:textSize="18sp"
+                android:textColor="@android:color/darker_gray"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/listTrailer"
+                android:orientation="horizontal"
+                tools:listitem="@layout/trailer_item"/>
 
         </LinearLayout>
 
 
-
+            <include
+                layout="@layout/movie_about_description"/>
 
     </LinearLayout>
 

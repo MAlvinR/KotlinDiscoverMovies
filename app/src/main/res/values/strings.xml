@@ -9,4 +9,7 @@
 
     <string name="votes">VOTES</string>
     <string name="vote">VOTE</string>
+    <string name="dummy_category_types">Family, Fantasy, Advanture</string>
+    <string name="dummy_production">United Kingdom, USA</string>
+    <string name="dummy_premiere">8 November 2016 (World)</string>
 </resources>

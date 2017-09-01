@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="id.co.horveno.discovermovies.activity.DetailActivity">
-
     <include layout="@layout/content_detail" />
 
     <android.support.design.widget.AppBarLayout
@@ -49,6 +48,7 @@
                     android:layout_alignParentLeft="true"
                     android:paddingRight="15dp"
                     android:paddingLeft="15dp"
+                    android:layout_marginBottom="30dp"
                     tools:text="@string/dummy_title"
                     android:textColor="@android:color/white"
                     android:textSize="28sp" />
