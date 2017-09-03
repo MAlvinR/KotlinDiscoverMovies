@@ -34,6 +34,17 @@ class Detail {
     @SerializedName("overview")
     val overview:String? = null
 
+    @SerializedName("production_companies")
+    val production_companies:List<Company>? = null
+
+    class Company {
+        @SerializedName("name")
+        val companyName:String? = null
+
+        @SerializedName("id")
+        val companyId:String? = null
+    }
+
     @SerializedName("release_date")
     val release_date:String? = null
 

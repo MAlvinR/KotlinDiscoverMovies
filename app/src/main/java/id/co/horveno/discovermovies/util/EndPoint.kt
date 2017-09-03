@@ -16,7 +16,7 @@ object EndPoint {
 
     val IMAGE_URL_POSTER = "http://image.tmdb.org/t/p/w185"
 
-    val IMAGE_URL_BACKDROP = "http://image.tmdb.org/t/p/w500"
+    val IMAGE_URL_BACKDROP = "http://image.tmdb.org/t/p/w780"
 
     val URL_NOWPLAYING = BASE_URL + NOW_PLAYING + API_KEY
     val URL_UPCOMING = BASE_URL + UPCOMING + API_KEY

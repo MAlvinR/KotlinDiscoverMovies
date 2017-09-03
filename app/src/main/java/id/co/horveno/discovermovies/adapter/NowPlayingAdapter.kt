@@ -36,6 +36,7 @@ class NowPlayingAdapter: RecyclerView.Adapter<NowPlayingAdapter.NowPlayingItemHo
 
         Picasso.with(mContext)
                 .load(EndPoint.IMAGE_URL_POSTER + nowPlayingData.poster_path)
+                .placeholder(R.drawable.placeholder)
                 .into(holder!!.movieThumb)
 
         holder.squareLayout.setOnClickListener({v ->

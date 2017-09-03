@@ -13,22 +13,31 @@ class Upcoming {
 
     inner class UpcomingData {
         @SerializedName("vote_count")
-        var vote_count:String? = null
+        val vote_count:Int? = null
 
         @SerializedName("id")
-        var idMovie:String? = null
+        val idMovie:Int? = null
 
         @SerializedName("vote_average")
-        var vote_average:String? = null
+        val vote_average:Double? = null
 
         @SerializedName("title")
-        var movieTitle:String? = null
+        val movieTitle:String? = null
 
         @SerializedName("popularity")
-        var popularity:String? = null
+        val popularity:Double? = null
 
         @SerializedName("poster_path")
-        var poster_path:String? = null
+        val poster_path:String? = null
+
+        @SerializedName("backdrop_path")
+        val backdrop_path:String? = null
+
+        @SerializedName("overview")
+        val overview:String? = null
+
+        @SerializedName("release_date")
+        val release_date:String? = null
 
     }
 

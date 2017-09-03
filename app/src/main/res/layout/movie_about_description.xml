@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:padding="15dp">
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/content_original"
-            android:text="@string/dummy_title"
+            tools:text="@string/dummy_title"
             android:textSize="18sp"
             android:textColor="@color/white"/>
     </LinearLayout>
@@ -53,7 +53,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dummy_category_types"
+            tools:text="@string/dummy_category_types"
             android:textSize="18sp"
             android:id="@+id/content_type"
             android:textColor="@color/white"/>
@@ -75,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dummy_production"
+            tools:text="@string/dummy_production"
             android:id="@+id/content_production"
             android:textSize="18sp"
             android:textColor="@color/white"/>
@@ -97,7 +97,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dummy_premiere"
+            tools:text="@string/dummy_premiere"
             android:textSize="18sp"
             android:id="@+id/content_premiere"
             android:textColor="@color/white"/>
@@ -119,8 +119,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dummy_overview"
-            android:lines="5"
+            tools:text="@string/dummy_overview"
             android:id="@+id/content_desc"
             android:ellipsize="end"
             android:textSize="18sp"

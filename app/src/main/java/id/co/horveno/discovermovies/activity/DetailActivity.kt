@@ -1,6 +1,9 @@
 package id.co.horveno.discovermovies.activity
 
+import android.content.Intent
+import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.AppBarLayout
 import android.support.v7.app.AppCompatActivity
@@ -41,8 +44,17 @@ class DetailActivity : AppCompatActivity() {
 
     var detailGson: Detail? = null
     var trailerGson: Trailer? = null
+    var releasedateMovie: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        {
+            getWindow().setStatusBarColor(Color.TRANSPARENT)
+        }
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
@@ -51,21 +63,22 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowTitleEnabled(false)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        var idMovie = intent.getIntExtra("id_movie", 0)
-        var titleMovie = intent.getStringExtra("title_movie")
-        var backdropMovie = intent.getStringExtra("backdrop_movie")
-        var overviewMovie = intent.getStringExtra("overview_movie")
-        var releasedateMovie = intent.getStringExtra("releasedate_movie")
-        var votesaverageMovie = intent.getDoubleExtra("votesaverage_movie", 0.00)
-        var votecountMovie = intent.getIntExtra("votecount_movie", 0)
+        val idMovie = intent.getIntExtra("id_movie", 0)
+        val titleMovie = intent.getStringExtra("title_movie")
+        val backdropMovie = intent.getStringExtra("backdrop_movie")
+        val overviewMovie = intent.getStringExtra("overview_movie")
+        releasedateMovie = intent.getStringExtra("releasedate_movie")
+        val votesaverageMovie = intent.getDoubleExtra("votesaverage_movie", 0.00)
+        val votecountMovie = intent.getIntExtra("votecount_movie", 0)
 
         header_title.text = titleMovie
         text_overview.text = overviewMovie
-        release_year.text = timeSetUp(releasedateMovie)
+        release_year.text = timeSetUp(releasedateMovie!!)
         votes_average.text = votesaverageMovie.toString()
 
         Picasso.with(applicationContext)
                 .load(EndPoint.IMAGE_URL_BACKDROP + backdropMovie)
+                .placeholder(R.drawable.placeholder)
                 .into(header_thumbnail)
 
         val layoutManager: LinearLayoutManager = LinearLayoutManager(applicationContext)
@@ -154,6 +167,31 @@ class DetailActivity : AppCompatActivity() {
 
                 runtime_text.text = detailGson!!.runtime + " Minutes"
 
+                content_original.text = detailGson!!.original_title
+                content_premiere.text = timeSetUp(releasedateMovie!!)
+                content_desc.text = detailGson!!.overview
+
+                for (i in 0..detailGson!!.genres!!.size -1) {
+                    val genre = detailGson!!.genres!!.get(i)
+
+                    if (i < detailGson!!.genres!!.size -1) {
+                        content_type.append(genre.genre + ", ")
+                    } else {
+                        content_type.append(genre.genre)
+                    }
+
+                }
+
+                for (i in 0..detailGson!!.production_companies!!.size -1) {
+                    val company = detailGson!!.production_companies!!.get(i)
+
+                    if (i < detailGson!!.production_companies!!.size -1) {
+                        content_production.append(company.companyName + ", ")
+                    } else {
+                        content_production.append(company.companyName)
+                    }
+
+                }
 
             }
 
@@ -182,7 +220,7 @@ class DetailActivity : AppCompatActivity() {
                     var gson: Gson = gsonBuilder.create()
 
                     trailerGson = gson.fromJson(response, Trailer::class.java)
-                    /*displayTrailer(trailerGson!!.trailer_results)*/
+
                     val adapter: TrailerAdapter = TrailerAdapter(this@DetailActivity, trailerGson!!.trailer_results)
                     listTrailer.adapter = adapter
 
@@ -205,29 +243,6 @@ class DetailActivity : AppCompatActivity() {
         })
         requestQueue.add(stringRequest)
     }
-
-    /*private fun displayTrailer(trailerDatas: List<Trailer.Data>?) {
-        view_trailers.removeAllViews()
-
-        for (i in 0..trailerDatas!!.size - 1) {
-            val trailerData: Trailer.Data = trailerDatas.get(i)
-            val view: View? = LayoutInflater.from(applicationContext).inflate(R.layout.trailer_item, view_trailers, false)
-
-            val gambar_trailer = view?.findViewById(R.id.img_trailer) as ImageView
-*//*
-            var judul_trailer = view?.findViewById(R.id.title_trailer) as TextView
-*//*
-            var judul_trailer = view?.findViewById(R.id.title_trailer) as TextView
-
-            Toast.makeText(this@DetailActivity, "TrailerName: " + trailerData.name, Toast.LENGTH_LONG).show()
-            judul_trailer.text = trailerData.name
-            *//*if (trailerData.site.equals("youtube")) {
-                Picasso.with(applicationContext)
-                        .load("http://img.youtube.com/vi/${trailerData.key}/default.jpg")
-                        .into(gambar_trailer)
-            }*//*
-        }
-    }*/
 
     private fun timeSetUp(releasedateMovie: String): String {
         val time = Time()
