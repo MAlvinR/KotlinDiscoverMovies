@@ -34,6 +34,7 @@ import android.widget.TextView
 import android.widget.Toast
 import id.co.horveno.discovermovies.adapter.TrailerAdapter
 import id.co.horveno.discovermovies.gson.Trailer
+import id.co.horveno.discovermovies.util.Constant
 import id.co.horveno.discovermovies.util.CustomFont
 import id.co.horveno.discovermovies.util.SquareLayout
 import kotlinx.android.synthetic.main.movie_about_description.*
@@ -154,7 +155,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun loadDetail(idMovie: Int) {
 
-        val URL_DETAIL: String = "http://api.themoviedb.org/3/movie/${idMovie}?api_key=5bcd103535c907563275e5c79a7abd77"
+        val URL_DETAIL: String = "http://api.themoviedb.org/3/movie/${idMovie}?api_key=" + Constant.API_KEY
 
         val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
         val stringRequest: StringRequest = StringRequest(Request.Method.GET, URL_DETAIL, object : Response.Listener<String> {
