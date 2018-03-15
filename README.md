@@ -7,7 +7,7 @@
 
 ## How to use this source
 This app uses TMDB API to retrieves movie. You must provide your own API Key in order to build the app. If you've not registered yet,
-you can register [here](https://www.themoviedb.org/account/signup). When you get it, just paste it to:  `Constant.java`
+you can register [here](https://www.themoviedb.org/account/signup). When you get it, just paste it to:  `Constant.kt`
 
 ## Screenshots
 ![homepage](https://user-images.githubusercontent.com/24661720/30311308-d64c63bc-97be-11e7-94b5-1f928a3f8207.png)
